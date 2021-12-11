@@ -19,8 +19,8 @@ if __name__ == '__main__':
 
     parser.add_argument('--dir_name', type=str, default=None, help='')
     parser.add_argument('--notes', type=str, default=None, help='')
-    parser.add_argument('--lowdata_token', type=str, default='hotel', help='choose whether to use token')
-    parser.add_argument('--use_lowdata_token', type=str, default='yes', help='the token you want to use')
+    parser.add_argument('--lowdata_token', type=str, default=None, help='choose whether to use token')
+    parser.add_argument('--use_lowdata_token', type=str, default=None, help='the token you want to use')
 
 
     parser.add_argument('--parametrize_emb', type=str, default='MLP', help='')
