@@ -11,6 +11,7 @@ from pytorch_lightning.utilities import rank_zero_info
 from transformers import (
     BartForConditionalGeneration,
     AdamW,
+    PegasusForConditionalGeneration,
     AutoConfig,
     AutoModel,
     AutoModelForPreTraining,
@@ -145,7 +146,7 @@ class PrefixTransformer(pl.LightningModule):
 
         self.seq2seq_model_type = MODEL_MODES[mode]
         if seq2seq_model is None:
-            self.seq2seq_model = BartForConditionalGeneration.from_pretrained(
+            self.seq2seq_model = PegasusForConditionalGeneration.from_pretrained(
                 self.hparams.model_name_or_path,
                 from_tf=bool(".ckpt" in self.hparams.model_name_or_path),
                 config=self.config,

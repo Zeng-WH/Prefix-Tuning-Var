@@ -7,7 +7,7 @@ if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
 if __name__ == '__main__':
-    os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+    os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
     parser = argparse.ArgumentParser(description='data2text E2E training args.')
     parser.add_argument('--mode', type=str, default='xsum', help='')
@@ -115,8 +115,8 @@ if __name__ == '__main__':
 
 
     elif args.mode == 'xsum':
-        data_dir = '/home1/CM2021/zwh/DOP-Tuning-master/data/train_as_test_new_oracle'
-        folder_name = "/home1/CM2021/zwh/DOP-Tuning-master/test_new/"
+        data_dir = '/home/disk2/zfj2020/zwh/multiwoz_transfer_dataset/train_as_test'
+        folder_name = "/home/disk2/zfj2020/zwh/DOP-Tuning-master/test_new/"
         max_source_length = 1024
         max_target_length = 60
         val_max_target_length = 60
@@ -213,7 +213,9 @@ if __name__ == '__main__':
     print(Model_FILE)
 
 
-    OLD_MODEL = 'facebook/bart-large'
+    OLD_MODEL = 'google/pegasus-large'
+
+    #OLD_MODEL = 'facebook/bart-large'
 
     app = "--optim_prefix {} --preseqlen {} --prefix_mode {} --format_mode {} " \
           "--gradient_accumulation_steps {} --learning_rate {} --weight_decay {} --seed {} " \

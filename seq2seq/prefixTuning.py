@@ -95,6 +95,9 @@ class PrefixTuning(PretrainedBartModel):
         else:
             self.lowdata_token = None
 
+        self.lowdata_token = False
+        self.lowdata_token = None
+
 
         if self.task_mode == 'dataless':
             self.mode_para = 1
